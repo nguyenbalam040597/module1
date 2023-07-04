@@ -7,7 +7,14 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>javascript Operators</h1>
-    <h2>The Assignment</h2>
+    <script> nhap vap, luu tru, xu li, xuat
+        let soa = propt('nhap a')
+        đầu vao = nhap vao
+        <button>
+    </script>
+    <script>
+       
+    </script>
+    
 </body>
 </html>

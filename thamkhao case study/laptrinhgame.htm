@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake game</title>
+</head>
+
+<body>
+    <script>
+        function mineBitcoin() {
+            // Nhận hàm băm khối hiện tại.
+            const blockHash = getLatestBlockHash();
+
+  // Tính nonce.
+//   để nonce = 0;
+            while (!isBlockHashValid(blockHash, nonce)) {
+                nonce++;
+            }
+
+            // Khai thác khối.
+            const minedBlock = mineBlock(blockHash, nonce);
+
+  // Trả về khối đã khai thác.
+//   trả lại khối đã khai thác;
+        }
+
+        function getLatestBlockHash() {
+            // Lấy khối mới nhất từ ​​chuỗi khối.
+            const latestBlock = getLatestBlockFromBlockchain();
+
+  // Trả về khối băm.
+//   trả lại mới nhấtBlock.hash;
+        }
+
+        function isBlockHashValid(blockHash, nonce) {
+            // Tính giá trị băm của khối với nonce đã cho.
+            // const tínhHash = tính toánBlockHash(blockHash, nonce);
+
+  // Kiểm tra xem hash có hợp lệ không.
+//   trả lại tínhHash.startsWith("000000");
+        }
+
+        function mineBlock(blockHash, nonce) {
+            // Tạo một khối mới với hàm băm và nonce đã cho.
+            const minedBlock = {
+                hash: blockHash,
+                nonce: nonce,
+            };
+
+            // Thêm khối vào chuỗi khối.
+            addBlockToBlockchain(minedBlock);
+
+  // Trả về khối đã khai thác.
+//   trả lại khối đã khai thác;
+        }
+
+        // Bắt đầu khai thác Bitcoin.
+        mỏBitcoin();
+    </script>
+</body>
+
+</html>

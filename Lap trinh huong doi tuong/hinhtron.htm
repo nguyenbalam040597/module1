@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // viet lop hinh tron
+        /*
+        Thuoc tinh:
+            ban_kinh: int
+            mau_sac: string
+        Phuong thuc:
+            hinhtron(ts_bankinh): void =>khoitao
+            setBankinh(ts_bk): void
+            getBankinh(): int
+            setMausac(ts_mau): void
+            getMausac(): string
+            tinhChuvi(): int
+            tinhDienTich: int
+            veHinh: void
+        */
+
+        let HinhTron = function (ts_bk) {
+            this.ban_kinh = 0;
+            this.mau_sac = "";
+            this.setban_kinh = function (ts_bk) {
+                this.ban_kinh = ts_bk
+            }
+            this.getban_kinh = function () {
+                return this.ban_kinh
+            }
+            this.setmau_sac = function (ts_mau) {
+                this.mau_sac = ts_mau
+            }
+            this.getmau_sac = function () {
+                return this.mau_sac
+            }
+            this.tinhChuvi = function () {
+                return this.ban_kinh*2*Math.PI
+            }
+            this.tinhDienTich = function () {
+                return this.ban_kinh*this.ban_kinh*Math.PI
+            }
+            this.vehinh = function() {
+                var c = document.getElementById('myCanvas');
+                var ctx = c.getContext("2d");
+                ctx.beginPath();
+                /*
+                arc(x,y,r,sAngle,eAngle)
+                */
+                ctx.arc(50,100,this.ban_kinh,0,0,5*Math.PI);
+            }
+        }
+        let hinhtron1 = new HinhTron(6)
+        hinhtron1.setban_kinh(5);
+        hinhtron1.setmau_sac('den');
+        console.log(hinhtron1.getban_kinh());
+        console.log(hinhtron1.getmau_sac());
+        console.log(hinhtron1.tinhChuvi());
+        console.log(hinhtron1.tinhDienTich());
+    </script>
+</body>
+</html>

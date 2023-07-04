@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //bai 1
+        // function alertMessage(a) {
+        //     alert('xin chao ' + a);
+        // }
+        // let b = prompt('Nhap gia tri cho b:');
+        // alertMessage(b);
+
+        //bai2
+        // function xuly(a) {
+        //     let kq = a + 1;
+        //     return kq;
+        // }
+        // let soA = parseInt(prompt('Nhap so'));
+        // alert(xuly(soA));
+
+        //bai3
+        // function xu_li(a, b) {
+        //     if (a > b) {
+        //         alert(a + ' lớn hơn ' + b);
+        //     } else if (a <= b) {
+        //         alert('Tổng hai số là: ' + (a + b));
+        //     }
+        // }
+        // let a = parseInt(prompt('Nhập a: '));
+        // let b = parseInt(prompt('Nhập b: '));
+        // xu_li(a, b);
+
+
+        // //bai4
+        // function addNumbers() {
+        //     firstNum = 4;
+        //     secondNum = 8;
+        //     result = firstNum + secondNum;
+        //     return result;
+        // }
+        // result = 0;
+        // result = addNumbers();
+        // alert(result)
+
+        //bai5
+        // var star1 = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"]
+        // var star2 = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"]
+
+        // function check_star(star) {
+        //     let kiemtra = false;
+        //     let index_star1 = 0
+        //     let result = "";
+
+        //     for (let i = 0; i < star1.length; i++) {
+        //         if (star == star1[i]) {
+        //             kiemtra = true;
+        //             index_star1 = i;
+        //             result = star2[i];
+        //             break; // exit the loop early since we found the star
+        //         }
+        //     }
+
+        //     if (kiemtra) {
+        //         return result;
+        //     } else {
+        //         return 'Khong tim thay sao';
+        //     }
+        // }
+
+        // let star = prompt("Nhap vao ngoi sao:")
+        // document.write(check_star(star));
+
+
+
+
+
+        // function check_star(star) {
+        //     for (let i = 0; i < star1.length; i++){
+        //         if (star == star1[i]) {
+        //             document.write("sao cần tìm " + star2[i]);
+        //             break;
+        //         }
+        //     }        
+        // }
+        // let star = prompt("Nhap vao ngoi sao:");
+
+
+        
+        let star1 = [
+            "Polaris",
+            "Aldebaran",
+            "Deneb",
+            "Vega",
+            "Altair",
+            "Dubhe",
+            "Regulus",
+        ];
+        let star2 = [
+            "Ursa Minor",
+            "Tarurus",
+            "Cygnus",
+            "Lyra",
+            "Aquila",
+            "Ursa Major",
+            "Leo",
+        ];
+        function check_star(star) {
+            for (let i = 0; i < star1.length; i++) {
+                if (star == star1[i]) {
+                    document.write("sao cần tìm " + star2[i]);
+                    break;
+                }
+            }
+        }
+        let star = prompt("Nhập vào ngôi sao");
+        check_star(star);
+    </script>
+
+</body>
+
+</html>

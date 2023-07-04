@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let MyDate = function (ts_ngay,ts_thang,ts_nam) {
+            // thuoc tinh
+            this.ngay = 0;
+            this.thang = 0;
+            this.nam = 0;
+
+            //phuong thuc
+            this.setNgay = function (ts_ngay) {
+                this.ngay = ts_ngay
+            }
+            this.getNgay = function() {
+                return this.ngay
+            }
+
+            //thang
+            this.setthang = function (ts_thang) {
+                this.thang = ts_thang
+            }
+            this.getngay = function () {
+                return this.thang
+            }
+
+            //nam 
+            this.setnam = function (ts_nam) {
+                this.nam = ts_nam
+            }
+            this.getnam = function () {
+                return this.nam
+            }
+
+            // tra ve chuoi
+            this.toString = function(){
+            // tra ve dinh dang ngay/thang/nam 
+            return this.ngay + "/" + this.thang + "/" + this.nam    
+            }
+        }
+
+        //khoi tao doi tuong: truyen vao 3 doi so 26,6,2023
+        let today = new MyDate(26,6,2023);
+        // goi pt setNgay
+        today.setNgay(26)
+        // goi pt set thang
+        today.setThang(6)
+        // goi pt set nam
+        today.setnam(2023)
+        // goi pt get ngay va in ra 
+        console.log(today.getNgay());
+        // goi pt get thang va in ra 
+        console.log(today.getThang());
+        // goi pt get nam va in ra 
+        console.log(today.getNam());
+        console.log(today.toString());
+        // in ra doi tuong
+        console.log(today);
+    </script>
+</body>
+</html>

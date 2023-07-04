@@ -18,10 +18,16 @@
     // document.write('tongtb'+tongtb)
     </script>
     <script>
-        var R = parseInt(prompt("Nhập bán kính hình tròn:"))
+        // var R = parseInt(prompt('nhap ban kinh hinh tron'))
+        // const pi = 3.14;
+        // var S = R*R*pi
+        // document.write('dien tich S'+ S)
+    </script>
+    <script>
+        var R = parseInt(prompt('nhap ban kinh hinh tron'))
         const pi = 3.14;
-        var S = R*R*pi;
-        document.write('dien tich s'+S)
+        var C = R*2*3.14
+        document.write('chu vi C'+ C)
     </script>
 </body>
 </html>

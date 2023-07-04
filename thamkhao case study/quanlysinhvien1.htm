@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Soccer</title>
+    <style>
+        #logo {
+            width: 100%;
+            height: 300px;
+        }
+
+        table {
+            background-color: aliceblue;
+        }
+
+        #id1 {
+            text-align: center;
+            font-size0: 25px;
+            backgroundpkm-color: orange;
+            color: chocolate;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 50px;
+            background-color: red;
+            margin: 0;
+        }
+
+        th,
+        td {
+            text-align: center;
+        }
+    </style>
+</head>
+<img src="https://we25.vn/media2018/Img_News/2020/09/19/anh-dep-1_20200919112245.jpg" id="logo">
+<h1> QUẢN LÝ SINH VIÊN </h1>
+<table style=" border: 1px solid black; width: 700px; float: right">
+    <tr>
+        <th style="font-size: 40px" colspan="7"> Danh sách sinh viên </th>
+    </tr>
+    <tr>
+        <th>STT</th>
+        <th>Họ tên</th>
+        <th>Ngày sinh</th>
+        <th>Giới tính</th>
+        <th>Lớp</th>
+        <th>Ảnh</th>
+        <th>Tùy chọn</th>
+    </tr>
+    <tbody id="list-soccer">
+    </tbody>
+</table>
+<table border="1" style="width: 500px; height: 300px" ;>
+    <tr id="id1">
+        <th colspan="2"> Thông tin sinh viên </th>
+    </tr>
+    <tr>
+        <th>STT</th>
+        <td><input type="number" id="id"></td>
+    </tr>
+    <tr>
+        <th>Họ tên</th>
+        <td><input type="text" id="ten"></td>
+    </tr>
+    <tr>
+        <th>Ngày sinh</th>
+        <td><input type="text" id="ngay"></td>
+    </tr>
+    <tr>
+        <th>Giới tính</th>
+        <td><input type="text" id="gioitinh"></td>
+    </tr>
+    <tr>
+        <th>Lớp</th>
+        <td><input type="text" id="hoatdong"></td>
+    </tr>
+    <tr>
+        <th>Ảnh</th>
+        <td><input type="text" id="img"></td>
+    </tr>
+    <tr>
+        <th></th>
+        <td>
+            <button style="background-color: teal" id="add" onclick="addsoccer()">Add</button>
+            <button style="background-color: rosybrown" id="edit" onclick="undatesoccer()">Save</button>
+        </td>
+    </tr>
+</table>
+<script>
+    class QuanLiCauThu {
+        constructor(arr) {
+            this.cauthu = arr;
+        }
+        HienThi() {
+            let table = '';
+            for (let i = 0; i < this.cauthu.length; i++) {
+                table += '<tr>';
+                table += '<td>';
+                table += this.cauthu[i].id;
+                table += '</td>';
+                table += '<td>';
+                table += this.cauthu[i].ten;
+                table += '</td>';
+                table += '<td>';
+                table += this.cauthu[i].ngay;
+                table += '</td>';
+                table += '<td>';
+                table += this.cauthu[i].gioitinh;
+                table += '</td>';
+                table += '<td>';
+                table += this.cauthu[i].hoatdong;
+                table += '</td>';
+                table += '<td>';
+                table += '<img width="100px" height="100px" src=" ' + this.cauthu[i].img + '">';
+                table += '</td>';
+                table += '<td>' +
+                    '<button style="background-color: blue; color: white "  type="button" onclick="deleteCauThu(' + i + ')">Delete</button> ' +
+                    ' <button  style="background-color: orange ; color: white" type="button" onclick="editCauThu(' + i + ')">Edit</button>' +
+                    '</td>';
+                table += '</tr>';
+            }
+            document.getElementById('list-soccer').innerHTML = table;
+        }
+        addsoccer(cauthu) {
+            this.cauthu.push(cauthu);
+        }
+        delete(id) {
+            this.cauthu.splice(id, 1);
+        }
+        TimCauthu(id) {
+            return this.cauthu[id];
+        }
+        edit(cauthu, id, ten, ngay, gioitinh, hoatdong, img) {
+            cauthu.edit(id, ten, ngay, gioitinh, hoatdong, img);
+        }
+    }
+    class CauThu {
+        constructor(id, ten, ngay, gioitinh, hoatdong, img) {
+            this.id = id;
+            this.ten = ten;
+            this.ngay = ngay;
+            this.gioitinh = gioitinh;
+            this.hoatdong = hoatdong;
+            this.img = img;
+        }
+        getID() {
+            return this.id;
+        }
+        getTen() {
+            return this.ten;
+        }
+        getNgay() {
+            return this.ngay;
+        }
+        getGioiTinh() {
+            return this.gioitinh;
+        }
+        getCLB() {
+            return this.hoatdong;
+        }
+        getImg() {
+            return this.img;
+        }
+        setID(id) {
+            this.id = id;
+        }
+        setTen(ten) {
+            this.ten = ten;
+        }
+        setNgay(ngay) {
+            this.ngay = ngay;
+        }
+        setGioiTinh(gioitinh) {
+            this.gioitinh = gioitinh;
+        }
+        setCLB(hoatdong) {
+            this.hoatdong = hoatdong;
+        }
+        setImg(img) {
+            this.img = img;
+        }
+        edit(id, ten, ngay, gioitinh, hoatdong, img) {
+            this.id = id;
+            this.ten = ten;
+            this.ngay = ngay;
+            this.gioitinh = gioitinh;
+            this.hoatdong = hoatdong;
+            this.img = img
+        }
+    }
+    let cauthu1 = new CauThu('1', "Mai Thảo Nguyên", '07/05/1998', 'Nữ', 'hs011', 'https://tse3.mm.bing.net/th?id=OIP.8BxWMFOI7F-sKVrnzkqN4QHaJ4&pid=Api&P=0&h=180');
+    let cauthu2 = new CauThu('2', 'Ngô Công Minh', '19/09/1994', 'Nam', 'hs012', 'https://tse1.mm.bing.net/th?id=OIP.zDpkbSxWJKF9vp9HB0zkSgHaLH&pid=Api&P=0&h=180');
+    let cauthu3 = new CauThu('3', 'Hoàng Thiên Ân', '22/01/2000', 'Nữ', 'hs013', 'https://tse1.explicit.bing.net/th?id=OIP.sdJWZ4ziXzXDC0qNuyI-MQHaLH&pid=Api&P=0&h=180');
+    let arr = [cauthu1, cauthu2, cauthu3];
+    let quanlicauthu = new QuanLiCauThu(arr);
+    function addsoccer() {
+        let id = document.getElementById('id').value;
+        let ten = document.getElementById('ten').value;
+        let ngay = document.getElementById('ngay').value;
+        let gioitinh = document.getElementById('gioitinh').value;
+        let hoatdong = document.getElementById('hoatdong').value;
+        let img = document.getElementById('img').value;
+        let cauthu = new CauThu(id, ten, ngay, gioitinh, hoatdong, img);
+        quanlicauthu.addsoccer(cauthu);
+        quanlicauthu.HienThi();
+        clear();
+    }
+    function clear() {
+        document.getElementById('id').value = '';
+        document.getElementById('ten').value = '';
+        document.getElementById('ngay').value = '';
+        document.getElementById('gioitinh').value = '';
+        document.getElementById('hoatdong').value = '';
+        document.getElementById('img').value = '';
+    }
+    function deleteCauThu(id) {
+        quanlicauthu.delete(id);
+        quanlicauthu.HienThi();
+    }
+    let cauthuID = 0;
+    function editCauThu(id) {
+        let cauthu = quanlicauthu.TimCauthu(id);
+        document.getElementById('id').value = cauthu.id;
+        document.getElementById('ten').value = cauthu.ten;
+        document.getElementById('ngay').value = cauthu.ngay;
+        document.getElementById('gioitinh').value = cauthu.gioitinh;
+        document.getElementById('hoatdong').value = cauthu.hoatdong;
+        document.getElementById('img').value = cauthu.img;
+        cauthuID = id;
+    }
+    function undatesoccer() {
+        let id = document.getElementById('id').value;
+        let ten = document.getElementById('ten').value;
+        let ngay = document.getElementById('ngay').value;
+        let gioitinh = document.getElementById('gioitinh').value;
+        let hoatdong = document.getElementById('hoatdong').value;
+        let img = document.getElementById('img').value;
+        let cauthu = quanlicauthu.TimCauthu(cauthuID);
+        quanlicauthu.edit(cauthu, id, ten, ngay, gioitinh, hoatdong, img);
+        quanlicauthu.HienThi();
+        clear();
+    }
+    quanlicauthu.HienThi();
+</script>
+</body>
+</html (332 ko) https://tse3.mm.bing.net/th?id=OIP.py4cnI7o__kJmBxNrh8RoQHaJ4&pid=Api&P=0&h=180https://tse3.mm.bing.net/th?id=OIP.py4cnI7o__kJmBxNrh8RoQHaJ4&pid=Api&P=0&h=180 (56 ko)
+https://tse2.mm.bing.net/th?id=OIP.-PBD4Rp4q0bgmHG5FySo3gHaHa&pid=Api&P=0&h=180 (123 ko)
+https://toplist.vn/images/800px/trung-tam-anh-mau-hoang-tram-319533.jpg(6 ko)
+https://tse4.mm.bing.net/th?id=OIP._qVcj1voUez6U-Blzg_TSAAAAA&pid=Api&P=0&h=180

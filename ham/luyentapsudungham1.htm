@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // //bai 1
+        // function tinh(number) {
+        //     let result = number*number;
+        //     document.write(' binh phuong la ' + result);
+        // }
+        // let number = parseInt(prompt('Nhap vao day'))
+        // tinh(number)
+
+        // //bai2
+        // function dientich(a) {
+        //     let s = Math.PI * a * a
+        //     document.write('dien tich hinh tron la ' + s);
+        // }
+        // function chuvi(b) {
+        //     let c = 2 * Math.PI * b
+        //     document.write('chu vi hinh tron la ' + c);
+        // }
+        // let a = parseInt(prompt('nhap vao dien tich'));
+        // let b = parseInt(prompt('nhap vao chu vi'));
+        // dientich(a)
+        // chuvi(b)
+
+        //bai3
+        function giai_thua(soA) {
+            let kq = 1
+            for (let i = 1; i <= soA; i++) {
+                kq *= i
+            }
+            document.write('giai thua cua' + soA + 'la' + kq)
+        }
+        giai_thua(5)
+
+        //bai4
+        function kiem_tra(x) {
+            (isNaN(parseInt(x)) != true) ? alert(x + ' là kí tự số') : alert(x + ' không phải là kí tự số');
+        }
+        let ki_tu = prompt('Nhập kí tự: ');
+        kiem_tra(ki_tu);
+
+        //bai5
+    </script>
+</body>
+
+</html>

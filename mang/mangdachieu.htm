@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var tu_sach = [ 
+            [ 'van','su', 'dia'], //0
+            //  0    1     2
+            [' toan', 'ly','hoa'] //1
+            //  0    1     2
+        ]
+
+
+        console.log(tu_sach);
+        // truy cap cac phan tu trong mang
+        console.log(tu_sach[0][0]);
+        console.log(tu_sach[0][1]);
+        console.log(tu_sach[0][2]);
+
+        console.log(tu_sach[1][0]);
+        console.log(tu_sach[1][1]);
+        console.log(tu_sach[1][2]);
+
+        // thay doi gia tri
+        tu_sach[0][0] = 'van hoc';
+        tu_sach[0][1] = 'lich su';
+        tu_sach[0][2] = 'dia ly';
+
+        tu_sach[1][0] = 'toan hoc';
+        tu_sach[1][1] = 'vat ly';
+        tu_sach[1][2] = 'hoc hoc';
+
+        // them phan tu o cuoi mang 
+        tu_sach[0].push('anh van')
+        tu_sach[1].push('sinh hoc')
+
+
+        tu_sach[0].splice(2,1,'them')
+                        // xoa  them
+        
+                        
+        for(let h = 0; h<2; h++){
+            for(let c = 0; c<3; c++){
+                console.log(tu_sach[h][c]);
+            }
+
+        }               
+
+
+
+
+
+    </script>
+    <script>
+        var tieng_anh = ['hello','google','love'];
+        //                   0     1        2
+
+        var tieng_viet = ['chao','tam biet','yeu']
+        //                   0       1       2
+        var tu = prompt('nhap vao tu can dich');
+        var indexTu = tieng_anh.indexOf(tu); //1 
+
+        alert( teng_viet[indexTu]);
+    </script>
+</body>
+</html>

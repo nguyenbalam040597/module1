@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+ <body>
+    <!-- <canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3;">
+        <script>
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+            ctx.moveTo(0, 0);
+            ctx.lineTo(200, 100);
+            ctx.stroke(); -->
+        </script>  -->
+    <!-- <canvas id="myCanvas" width="200" height="200"></canvas>
+    <script>
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+            ctx.beginPath();
+            ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+            ctx.stroke();
+    </script> -->
+    <canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3;">
+        <script>
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+            // Vẽ hình chữ nhật đơn giản
+            ctx.fillStyle = "red";
+            ctx.fillRect(40, 20, 100, 50);
+
+            // Vẽ đường thẳng
+            ctx.beginPath();
+            ctx.moveTo(100, 100);
+            ctx.lineTo(200, 200);
+            ctx.strokeStyle = "blue";
+            ctx.stroke();
+
+            // Vẽ vòng tròn
+            ctx.beginPath();
+            ctx.arc(300, 300, 50, 0, 2 * Math.PI);
+            ctx.fillStyle = "green";
+            ctx.fill(); 
+        </script>
+    <!-- <canvas id="myCanvas" width="200" height="300"></canvas>
+        <script>
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+
+            // Đặt màu fill
+            ctx.fillStyle = "yellow";
+
+            // Bắt đầu vẽ đường tròn
+            ctx.beginPath();
+            ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+
+            // Đổ màu fill cho hình tròn
+            ctx.fill();
+
+            // Đặt độ dày nét vẽ
+            ctx.lineWidth = 5;
+
+            // Đặt màu vẽ
+            ctx.strokeStyle = "black";
+
+            // Vẽ đường tròn bằng nét vẽ đen
+            ctx.stroke(); 
+    </script>  -->
+    <!-- <canvas id="myCanvas" width="500" height="500" style="border:1px solid #d3d3d3;"></canvas>
+        <script>
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d")
+        </script> -->
+    <!-- <script>
+        var counter = 1;
+
+        if (counter == 1) {
+            console.log('hello');
+        }
+    </script> -->
+</body>
+</html>

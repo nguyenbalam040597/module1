@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas {
+            border: solid 1px black;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <canvas id="GameCanvas" width="400" height="400"></canvas>
+    <script>
+        var c = document.getElementById("GameCanvas");
+        var ctx = c.getContext("2d");
+        var player = {
+            x: canvas.width / 2,
+            y: canvas.height / 2,
+            size: 20
+        };
+        function drawPlayer() {
+            ctx.beginPath();
+            ctx.arc(player.x, player.y, player.size, Math.PI * 2);
+            ctx.fillstyle = "red";
+            ctx.fill();
+            ctx.closePath();
+        }
+        function clearCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+        function movePlayer(event) {
+            if (event.keyCode == 37) { // left arrow
+                player.x -= 10;
+            } else if (event.keyCode == 38) { // up arrow
+                player.x -= 10
+            } else if (event.key.Code == 39) { // right arrow
+                player.x += 10;
+            } else if (event.keyCode == 40) { // down arrow
+                player.x += 10;
+            }
+        }
+        document.addEventListener("keydown", movePlayer);
+        function gameLoop() {
+            clearCanvas();
+            drawPlayer();
+            window.requestAnimationFrame(gameLoop);
+        }
+        gameLoop();
+    </script> -->
+    <script>
+        var a = 5
+        console.log(a++);
+        console.log(++a);
+    </script>
+</body>
+
+</html>

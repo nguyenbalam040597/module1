@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <canvas id="myCanvas" width="500" height="335"></canvas>
+    <script>
+        let canvas = document.getElementById("myCanvas");
+        let ctx = canvas.getContext("2d");
+        // Đặt màu fill và stroke
+        ctx.fillStyle = "red";
+        ctx.strokeStyle = "black";
+
+        // Bắt đầu vẽ hình trái tim
+        ctx.beginPath();
+        ctx.moveTo(250, 100); // Điểm bắt đầu
+        ctx.bezierCurveTo(250, 50, 150, 50, 150, 100); // Vẽ đường cong trên bên trái
+        ctx.bezierCurveTo(150, 150, 250, 250, 250, 350); // Vẽ đường cong dưới cùng
+        ctx.bezierCurveTo(250, 250, 350, 150, 350, 100); // Vẽ đường cong trên bên phải
+        ctx.bezierCurveTo(350, 50, 250, 50, 250, 100); // Vẽ đường cong cuối cùng
+        ctx.stroke();
+        ctx.fill();
+    </script> -->
+    <!-- <canvas id="myCanvas" width="500" height="500"></canvas>
+    <script>
+        let canvas = document.getElementById("myCanvas");
+        let ctx = canvas.getContext("2d");
+        // Đặt màu fill và stroke
+        ctx.fillStyle = "navy";
+        ctx.strokeStyle = "white";
+
+        // Bắt đầu vẽ hình ngân hà
+        ctx.beginPath();
+        ctx.moveTo(250, 100); // Điểm bắt đầu
+        ctx.bezierCurveTo(125, 125, 125, 375, 250, 400); // Vẽ đường cong bên trái
+        ctx.bezierCurveTo(375, 375, 375, 125, 250, 100); // Vẽ đường cong bên phải
+        ctx.stroke();
+        ctx.fill();
+    </script> -->
+    <!-- <script>
+        // Khai báo biến cho game
+        let canvas = document.getElementById("canvas");
+        let ctx = canvas.getContext("2d");
+        let car = {
+            x: 50,  // Vị trí ban đầu của xe
+            y: 300,
+            speed: 2, // Tốc độ ban đầu của xe
+            angle: 0 // Góc quay ban đầu của xe
+        };
+        let score = 0;
+        let gameOver = false;
+        let obstacles = []; // Mảng lưu trữ các chướng ngại vật
+        let rewards = []; // Mảng lưu trữ các phần thưởng
+        let rewardScore = 0;
+
+        // Hàm cập nhật trạng thái của game
+        function update() {
+            // Xóa màn hình
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Vẽ xe
+            drawCar(car.x, car.y, car.angle);
+
+            // Di chuyển xe
+            car.x += car.speed * Math.cos(car.angle);
+            car.y += car.speed * Math.sin(car.angle);
+
+            // Kiểm tra va chạm với các chướng ngại vật
+            for (let i = 0; i < obstacles.length; i++) {
+                if (isColliding(car, obstacles[i])) {
+                    gameOver = true;
+                }
+            }
+
+            // Vẽ các chướng ngại vật và di chuyển chúng
+            for (let i = 0; i < obstacles.length; i++) {
+                drawObstacle(obstacles[i].x, obstacles[i].y);
+                obstacles[i].y += car.speed;
+            }
+
+            // Kiểm tra xem xe đi qua phần thưởng nào chưa
+            for (let i = 0; i < rewards.length; i++) {
+                if (isColliding(car, rewards[i])) {
+                    rewardScore++;
+                    rewards.splice(i, 1); // Xóa phần thưởng khi xe đi qua
+                }
+            }
+
+            // Vẽ các phần thưởng và di chuyển chúng
+            for (let i = 0; i < rewards.length; i++) {
+                drawReward(rewards[i].x, rewards[i].y);
+                rewards[i].y += car.speed;
+            }
+
+            // Tăng tốc độ nếu người chơi nhấn Ctrl
+            if (isKeyPressed("Control")) {
+                car.speed += 0.1;
+            }
+
+            // Thay đổi hướng đi của xe nếu người chơi nhấn các phím mũi tên
+            if (isKeyPressed("ArrowLeft")) {
+                car.angle -= Math.PI / 50;
+            }
+            if (isKeyPressed("ArrowRight")) {
+                car.angle += Math.PI / 50;
+            }
+
+            // Tăng điểm số nếu có phần thưởng
+            score += rewardScore;
+            rewardScore = 0;
+
+            // Vẽ điểm số
+            drawScore(score);
+
+            // Khi game kết thúc
+            if (gameOver) {
+                drawGameOver();
+                return;
+            }
+
+            // Tiếp tục cập nhật trạng thái của game
+            window.requestAnimationFrame(update);
+        }
+
+        // Hàm kiểm tra va chạm giữa hai đối tượng
+        function isColliding(obj1, obj2) {
+            let dx = obj1.x - obj2.x;
+            let dy = obj1.y - obj2.y;
+            let distance = Math.sqrt(dx * dx + dy * dy);
+            return distance < 30; // Khoảng cách giữa hai đối tượng <= 30 thì coi như va chạm
+        }
+
+        // Hàm kiểm tra xem một phím có được nhấn hay không
+        function isKeyPressed(key) {
+            return key in keysDown;
+        }
+
+        // Hàm vẽ xe
+        function drawCar(x, y, angle) {
+            ctx.save();
+            ctx.translate(x, y);
+            ctx.rotate(angle);
+            ctx.fillStyle = "red";
+            ctx.fillRect
+        }
+
+    </script> -->
+    <canvas id="myCanvas" width="500" height="600"></canvas>
+    <script>
+        class Rectangle {
+            width;
+            height;
+            constructor(width, height) {
+                this.width = width;
+                this.height = height;
+            }
+
+            getWidth() {
+                return this.width;
+            }
+
+            getHeight() {
+                return this.height;
+            }
+
+            setWidth(width) {
+                this.width = width;
+            }
+
+            setHeight(height) {
+                this.height = height;
+            }
+
+            getArea() {
+                return this.width * this.height;
+            }
+
+            getPerimeter() {
+                return (this.width + this.height) * 2;
+            }
+
+        }
+        let myRectangle = new Rectangle(150, 50);
+        let width = myRectangle.getWidth();
+        let height = myRectangle.getHeight();
+
+        myRectangle.setWidth(200);
+        myRectangle.getWidth();
+
+        document.write(myRectangle.getWidth());
+
+
+        let canvas = document.getElementById("DemoCanvas");
+        let ctx = canvas.getContext("2d");
+        ctx.fillStyle = '#fa4b2a';
+        ctx.fillRect(10, 10, width, height)
+    </script>
+</body>
+
+</html>

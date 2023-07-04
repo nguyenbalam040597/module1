@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function sumOfListFibonacy(x) {
+            if (x <= 0) {
+                return 0;
+            } else if (x == 1) {
+                return 1;
+            } else {
+                let fib = [0, 1];
+                for (let i = 2; i <= x; i++) {
+                    fib.push(fib[i - 1] + fib[i - 2]);
+                }
+                return fib.reduce((a, b) => a + b, 0);
+            }
+        }
+        console.log(sumOfListFibonacy(0));  // Kết quả: 0
+        console.log(sumOfListFibonacy(1));  // Kết quả: 1
+        console.log(sumOfListFibonacy(2));  // Kết quả: 1
+        console.log(sumOfListFibonacy(5));  // Kết quả: 7
+        console.log(sumOfListFibonacy(10)); // Kết quả: 143
+    </script>
+</body>
+
+</html>

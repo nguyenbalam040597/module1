@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let Human = function () {
+            // thuoc tinh
+            this.ten = '';
+            this.tuoi = 3;
+
+            // phuong thuc
+            this.hoc = function (mon_hoc) {
+                console.log(this.ten + 'dang hoc' + mon_hoc);
+            }
+            this.giai_tri = function (game) {
+                console.log(this.ten + 'dang giai tri' + game);
+            }
+        }
+
+        // sinh ra 3 doi tuong 
+        let phu = new Human();
+        // thiet lap gia tri thuoc tinh
+        phu.ten = 'phu'
+        phu.tuoi = '32'
+        phu.hoc('javascript')
+        phu.giai_tri("facebook")
+        let vu = new Human();
+        // thiet lap gia tri thuoc tinh
+        vu.ten = 'vu'
+        vu.tuoi = '21'
+        vu.hoc('anh van')
+        vu.giai_tri('choi game')
+
+        let lam = new Human();
+        lam.ten = 'lam'
+        lam.tuoi = '26'
+        console.log(phu);
+        console.log(vu);
+        console.log(lam);
+    </script>
+    <script>
+        let person = {
+            name: ['Bob', 'Smith'],
+            age: 32,
+            gender: 'male',
+            interests: ['music', 'skiing'],
+            bio: function () {
+                alert(this.name[0] + ' ' + this.name[1] + ' is ' + this.age + ' years old. He likes ' + this.interests[0] + ' and ' + this.interests[1] + '.');
+            },
+            greeting: function () {
+                alert('Hi! I\'m ' + this.name[0] + '.');
+            }
+        };
+    </script>
+</body>
+</html>

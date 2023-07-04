@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // dinh nghia doi tuong mobile
+        class Mobile {
+            constructor() {
+                this.trang_thai_pin = 100;
+                this.tin_dang_soan_thao = "";
+                this.hop_thu_den = [];
+                this.tin_da_gui = [];
+                this.trang_thai = false;
+            }
+            // phuong thuc kiem tra trang thai
+            kiem_tra_trang_thai() {
+                return this.trang_thai;
+            }
+            // phuong thuc bat dien thoai
+            bat() {
+                this.trang_thai = true;
+                this.trang_thai_pin -= 1;
+            }
+            // phuong thuc tat dien thoai
+            tat() {
+                this.trang_thai = false;
+                this.trang_thai_pin -= 1;
+            }
+            // phuong thuc xac pin
+            xac_pin() {
+                this.trang_thai_pin = 100;
+                this.trang_thai_pin -= 1;
+            }
+            // phuong thuc soan tin nhan
+            soan_tin_nhan(noi_dung) {
+                this.tin_dang_soan_thao = noi_dung;
+                this.trang_thai_pin -= 1;
+            }
+            // phuong thuc nhan tin nhan 
+            nhan_tin_nhan(mobile) {
+                this.hop_thu_den.push(mobile.tin_dang_soan_thao);
+                this.trang_thai_pin -= 1;
+            }
+            // phuong thuc gui tin nhan
+            gui_tin_nhan(mobile) {
+                this.tin_da_gui.push(this.tin_dang_soan_thao);
+                mobile.nhan_tin_nhan(this);
+                this.trang_thai_pin -= 1;
+            }
+            // phuong thuc xem hop thu den 
+            xem_hop_thu_den() {
+                return this.hop_thu_den;
+            }
+            // phuong thuc xem tin da gui
+            xem_tin_da_gui() {
+                return this.tin_da_gui;
+            }
+        }
+
+        // Khởi tạo đối tượng điện thoại nokia và iphone
+        let nokia = new Mobile();
+        let iphone = new Mobile();
+
+        // Bật điện thoại nokia và xạc pin
+        nokia.bat();
+        nokia.xac_pin();
+
+        // Soạn tin nhắn trên điện thoại nokia và gửi cho iphone
+        nokia.soan_tin_nhan("Xin chào, đây là tin nhắn từ nguyen ba lam!");
+        nokia.gui_tin_nhan(iphone);
+
+        // Kiểm tra hộp thư đến của iphone và hiển thị tin nhắn
+        console.log(iphone.xem_hop_thu_den()); // ["Xin chào, đây là tin nhắn từ nguyen ba lam"]
+    </script>
+</body>
+</html>
